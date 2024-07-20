@@ -1,0 +1,34 @@
+@keyframes example {
+  from {transform: scale(-50);}
+  to {transform: scale(0);}
+}
+.modalWrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  /* transition: all 3s ease-in; */
+}
+.modalWrapper.close {
+  display: none;
+}
+.modalContent {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  animation-name: example;
+  animation-duration: 0.3s;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}

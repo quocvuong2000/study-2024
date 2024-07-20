@@ -1,5 +1,5 @@
-import { useState } from "react";
-import userList from "./data";
+import { useState } from 'react';
+import userList from './data';
 
 type User = {
   id: string;
@@ -9,9 +9,9 @@ type User = {
 };
 
 // CRUD => CREATE, READ, UPDATE, DELETE
-const Users = () => {
+const Users = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const [users, setUsers] = useState<User[]>(userList);
-  const [inputName, setInputName] = useState("");
+  const [inputName, setInputName] = useState('');
 
   // Reason why we should use key when rendering list
   // => https://medium.com/geekculture/reactjs-why-index-as-a-key-is-an-anti-pattern-4b9dc6ef0067
@@ -27,14 +27,13 @@ const Users = () => {
     const newUserObject: User = {
       id: new Date().toISOString(),
       name: inputName,
-      username: "",
-      email: "",
+      username: '',
+      email: '',
     };
     const newUserList = [...users, newUserObject];
     setUsers(newUserList);
-    setInputName("");
+    setInputName('');
   };
-
 
   // 1. Lập 1 cái state lưu selected id
   // 2. sửa title, button, và thêm nút huỷ
@@ -74,7 +73,10 @@ const Users = () => {
                 <button className="py-1 max-h-9 px-4 bg-red-500 text-white  rounded-xl font-semibold">
                   Xoá
                 </button>
-                <button className="py-1 px-4 max-h-9 bg-blue-800 text-white  rounded-xl font-semibold">
+                <button
+                  className="py-1 px-4 max-h-9 bg-blue-800 text-white  rounded-xl font-semibold"
+                  onClick={() => setOpen(true)}
+                >
                   Edit Name
                 </button>
               </div>
