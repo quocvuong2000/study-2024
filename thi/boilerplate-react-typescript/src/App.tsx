@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import './App.css';
-import Users from './LESSONS/CRUD_USERS/Users';
-import ModalEdit from './LESSONS/MODAL';
+import UseEffectLesson from './LESSONS/USE_EFFECT';
 
 function App() {
   const [open, setOpen] = useState(false);
   return (
     <div className="App">
-      <button
+      {/* <button
         onClick={() => {
           setOpen(true);
         }}
@@ -15,7 +14,8 @@ function App() {
         OPEN MODAL
       </button>
       <Users setOpen={setOpen} />
-      <ModalEdit open={open} setOpen={setOpen} />
+      <ModalEdit open={open} setOpen={setOpen} /> */}
+      <UseEffectLesson />
     </div>
   );
 }
