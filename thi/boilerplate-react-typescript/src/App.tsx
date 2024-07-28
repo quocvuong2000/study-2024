@@ -7,7 +7,14 @@ function App() {
   const [open, setOpen] = useState(false);
   return (
     <div className="App">
-      <Users setOpen={setOpen}/>
+      <button
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        OPEN MODAL
+      </button>
+      <Users setOpen={setOpen} />
       <ModalEdit open={open} setOpen={setOpen} />
     </div>
   );

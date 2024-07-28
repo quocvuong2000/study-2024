@@ -11,8 +11,11 @@
   display: block;
   /* transition: all 3s ease-in; */
 }
-.modalWrapper.close {
+.close {
   display: none;
+}
+.open {
+  display: block;
 }
 .modalContent {
   position: relative;
